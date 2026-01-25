@@ -1,7 +1,14 @@
-// Travel controller: contains the logic for rendering the travel page
-//practice creating another controller similar to main.js
+var fs = require('fs');
+
 const travel = (req, res) => {
-  res.render('travel', { title: 'Travel' });
+  var trips = JSON.parse(fs.readFileSync('./data/trips.json', 'utf8'));
+
+  res.render('travel', {
+    title: 'Travel',
+    trips: trips
+  });
 };
 
-module.exports = { travel };
+module.exports = {
+  travel
+};
