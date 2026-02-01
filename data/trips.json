@@ -1,17 +1,12 @@
 [
   {
-    "name": "Gale Reef",
-    "description": "Gale Reef - Sed et augue lorem. In sit amet placerat arcu. Mauris volutpat ipsum dolor sit amet facilisis.",
-    "image": "reef1.jpg"
-  },
-  {
-    "name": "Dawson Canyon",
-    "description": "Dawson Canyon - Sed et augue lorem. In sit amet placerat arcu. Mauris volutpat ipsum dolor sit amet facilisis.",
-    "image": "reef2.jpg"
-  },
-  {
-    "name": "Cloud’s Rest",
-    "description": "Cloud’s Rest - Sed et augue lorem. In sit amet placerat arcu. Mauris volutpat ipsum dolor sit amet facilisis.",
-    "image": "reef3.jpg"
+    "code": "TRIP001",
+    "name": "Sample Trip",
+    "length": "7 days",
+    "start": "2026-06-01",
+    "resort": "Sample Resort",
+    "perPerson": "$1,500",
+    "image": "image.jpg",
+    "description": "Trip description"
   }
 ]
