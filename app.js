@@ -9,6 +9,9 @@ var usersRouter = require('./app_server/routes/users');
 
 var app = express();
 
+require('./models/db');
+
+
 // view engine setup: changed to app_server/views directory
 app.set('views', path.join(__dirname, 'app_server/views'));
 app.set('view engine', 'hbs');
