@@ -1,0 +1,21 @@
+<h1>{{ title }}</h1>
+
+<button type="button" (click)="goAdd()">+ Add Trip</button>
+
+<!-- Loading + Error states -->
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="!loading && error" class="text-danger">{{ error }}</div>
+
+<!-- Trips list -->
+<div *ngIf="!loading && !error">
+  <app-trip-card
+    *ngFor="let trip of trips"
+    [trip]="trip"
+    (edit)="onEdit($event)"
+    (remove)="onDelete($event)">
+  </app-trip-card>
+
+  <div *ngIf="trips.length === 0">
+    No trips found.
+  </div>
+</div>
