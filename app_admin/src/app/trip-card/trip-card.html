@@ -1,0 +1,21 @@
+<div class="trip-card">
+  <h2>{{ trip.name }}</h2>
+
+<img class="trip-img"
+     [src]="'/assets/images/' + trip.image"
+     [alt]="trip.name" />
+
+
+  <p>{{ trip.description }}</p>
+
+  <ul>
+    <li><strong>Code:</strong> {{ trip.code }}</li>
+    <li><strong>Length:</strong> {{ trip.length }}</li>
+    <li><strong>Start:</strong> {{ trip.start }}</li>
+    <li><strong>Resort:</strong> {{ trip.resort }}</li>
+    <li><strong>Per Person:</strong> {{ trip.perPerson }}</li>
+  </ul>
+
+  <button (click)="edit.emit(trip)">Edit</button>
+  <button (click)="remove.emit(trip)">Delete</button>
+</div>

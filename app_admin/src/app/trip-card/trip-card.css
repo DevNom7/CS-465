@@ -1,0 +1,6 @@
+.trip-img {
+  width: 20%;
+  max-height: 40%;
+  object-fit: cover;
+  border-radius: 6px;
+}
