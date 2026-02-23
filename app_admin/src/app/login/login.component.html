@@ -1,0 +1,23 @@
+<h1>Admin Login</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <label>Email</label>
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="email"
+    required
+  />
+
+  <label>Password</label>
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="password"
+    required
+  />
+
+  <button type="submit">Login</button>
+
+  <p *ngIf="error">{{ error }}</p>
+</form>

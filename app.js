@@ -1,3 +1,10 @@
+require('dotenv').config();
+
+// Register models + auth strategy
+require('./app_api/models/user');
+require('./app_api/config/passport');
+
+const passport = require('passport');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -21,8 +28,10 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(passport.initialize()); // Initialize Passport middleware
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Use the API routes after the database connection is established
 app.use('/', indexRouter);

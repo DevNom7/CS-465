@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "proxyConfig": "proxy.conf.json",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -73,6 +74,7 @@
         "test": {
           "builder": "@angular/build:unit-test"
         }
+        
       }
     }
   }
