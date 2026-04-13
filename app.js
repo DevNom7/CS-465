@@ -14,6 +14,7 @@ var logger = require('morgan');
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 const apiRouter = require('./app_api/routes');
+const errorHandler = require('./app_api/middleware/errorHandler');
 
 
 var app = express();
@@ -43,15 +44,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+// Centralized error handler — handles JWT, Mongoose, and general errors
+app.use(errorHandler);
 
 module.exports = app;
